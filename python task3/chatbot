@@ -1,0 +1,41 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+
+pairs = [
+    [
+        r"my name is (.*)",
+        ["Hello %1, how are you today?"]
+    ],
+    [
+        r"hi|hey|hello",
+        ["Hello", "Hey there!"]
+    ],
+    [
+        r"what is your name?",
+        ["I am a chatbot created by pratik. You can call me chatterbot."]
+    ],
+    [
+        r"how are you?",
+        ["Im doing good. and How about you?"]
+    ],
+    [
+        r"sorry (.*)",
+        ["It's alright", "It's OK, never mind"]
+    ],
+    [
+        r"I am (.*) (good|well|okay|ok)",
+        ["Nice to hear that", "Alright, great!"]
+    ],
+    [
+        r"quit",
+        ["Bye! Take care.", "It was nice talking to you. See you soon!"]
+    ]
+]
+
+print("Hi, I'm the chatbot")
+print("Please type lowercase English to start a conversation. Type 'quit' to end the conversation.")
+
+chat = Chat(pairs, reflections)
+
+chat.converse()
